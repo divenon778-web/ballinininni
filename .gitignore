@@ -1,0 +1,23 @@
+# Runtime/private local data
+data/state.json
+data/state.json.tmp
+public/local-avatars/*
+!public/local-avatars/.gitkeep
+
+# Secrets / local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+*.tmp
+
+# Dependencies / OS / editor
+node_modules/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

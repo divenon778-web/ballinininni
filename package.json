@@ -1,0 +1,16 @@
+{
+  "name": "bflipx",
+  "version": "1.1.0",
+  "private": true,
+  "description": "BflipX local entertainment project using virtual FLIPCOINS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "lan": "node scripts/lan.js",
+    "reset": "node scripts/reset.js",
+    "audit:assets": "node tools/audit-assets.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
