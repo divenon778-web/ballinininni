@@ -17,7 +17,6 @@
   function scrubRoCoinsText(){
     const walker=document.createTreeWalker(document.body||document.documentElement,NodeFilter.SHOW_TEXT);const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
     for(const n of nodes){const p=n.parentElement;if(!p||['SCRIPT','STYLE','NOSCRIPT'].includes(p.tagName))continue;if(/ro\s*coins?/i.test(n.nodeValue||''))n.nodeValue=(n.nodeValue||'').replace(/ro\s*coins?/gi,'FLIPCOINS');}
-    document.querySelectorAll('*').forEach(el=>{if(el.childNodes.length===1&&el.childNodes[0].nodeType===3){let t=el.textContent;if(/â€/.test(t)){t=t.replace(/â€""/g,'\u2014').replace(/â€"/g,'\u2014').replace(/â€'/g,'\u2018').replace(/â€\u2019/g,'\u2019');el.textContent=t;}}});
   }
   function cleanExternalText(){
     const walker=document.createTreeWalker(document.body||document.documentElement,NodeFilter.SHOW_TEXT);const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
