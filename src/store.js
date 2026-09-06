@@ -123,11 +123,11 @@ function ensureUser(username, profile={}) {
     user = {
       id: uid, username: clean || 'Player', robloxUsername: profile.robloxUsername || clean || 'Player',
       robloxId: profile.robloxId ?? null, displayName: profile.displayName || clean || 'Player',
-      balance: 100000, created: Date.now(), wagered: 0, won: 0, fairness: seedFairness(),
+      balance: 0, created: Date.now(), wagered: 0, won: 0, fairness: seedFairness(),
       avatar: profile.avatar || null, avatarUpdatedAt: profile.avatarUpdatedAt || 0, banned: false
     };
     state.users[uid] = user;
-    state.transactions.unshift({ id: id('tx'), userId: uid, amount: 100000, reason: 'STARTING_BALANCE', created: Date.now(), balanceAfter: user.balance });
+    state.transactions.unshift({ id: id('tx'), userId: uid, amount: 0, reason: 'STARTING_BALANCE', created: Date.now(), balanceAfter: user.balance });
   } else {
     if (profile.robloxId != null) user.robloxId = profile.robloxId;
     if (profile.robloxUsername) { user.robloxUsername = profile.robloxUsername; user.username = profile.robloxUsername; }
